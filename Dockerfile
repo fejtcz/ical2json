@@ -1,6 +1,10 @@
 FROM alpine:3.16
 
-RUN apk add python3 py3-pip
+ENV TZ=Europe/Prague
+
+RUN apk add python3 py3-pip tzdata
+
+RUN cp /usr/share/zoneinfo/America/Santiago /etc/localtime
 
 ADD requirements.txt .
 RUN pip install -r requirements.txt
