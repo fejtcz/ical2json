@@ -1,4 +1,5 @@
 import requests
+import requests_cache
 from cleantext import clean
 from icalendar import Calendar
 from datetime import datetime, timedelta
@@ -8,6 +9,7 @@ date_format_api = "%Y-%m-%d"
 
 
 def get_ical_data(url):
+    requests_cache.install_cache('calendar')
     data = requests.get("https://" + url)
     if data.status_code == 200:
         return str(data.text)

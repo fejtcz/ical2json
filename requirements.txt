@@ -1,5 +1,6 @@
 uvicorn==0.23.2
 fastapi==0.104.1
 requests==2.22.0
+requests-cache==1.1.1
 clean-text==0.6.0
 icalendar==5.0.11
